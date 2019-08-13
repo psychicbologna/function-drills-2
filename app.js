@@ -5,7 +5,7 @@ function jediName(firstName, lastName) {
     return lastName.slice(0, 3) + firstName.slice(0, 2);
 }
 
-console.log(jediName('Carrie', 'Fisher'));
+//console.log(jediName('Carrie', 'Fisher'));
 
 //To Infinity
 
@@ -28,7 +28,7 @@ function beyond(num) {
     }
 }
 
-console.log(beyond(0));
+//console.log(beyond(0));
 
 //Cracking the Code
 const message = [
@@ -71,4 +71,39 @@ function letterCase(word, firstLetter) {
     return result;
 }
 
-console.log(decode(message));
+//console.log(decode(message));
+
+//How many days in a month
+
+function daysInAMonth(month, leapYear) {
+    let days = '';
+    switch (month) {
+        case 'January':
+        case 'March':
+        case 'May':
+        case 'July':
+        case 'August':
+        case 'October':
+        case 'December':
+            days = `${month} has 31 days`;
+            break;
+        case 'April':
+        case 'June':
+        case 'September':
+        case 'November':
+            days = `${month} has 30 days`;
+            break;
+        case 'February':
+            if (leapYear === true) {
+                days = `${month} has 29 days`;
+            } else {
+                days = `${month} has 28 days`;
+            }
+            break;
+            default:
+                days = 'Must provide a valid month.';
+    }
+    return days;
+}
+
+console.log(daysInAMonth('February', false));
