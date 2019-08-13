@@ -107,3 +107,50 @@ function daysInAMonth(month, leapYear) {
 }
 
 console.log(daysInAMonth('February', false));
+
+//Rock Paper Scissors
+
+function rockPaperScissors(number) {
+    const randomNo = Math.floor(Math.random() * 3) + 1;
+    const rock = [1, 'rock'];
+    const paper = [2, 'paper'];
+    const scissors = [3, 'scissors'];
+
+    console.log(`You are ${number[1]}, your opponent is ${randomNo[1]}.`)
+
+    if (randomNo[0] === number[0]) {
+        console.log(`It's a tie!`);
+    } else if (randomNo[0] != number[0]) {
+        switch (number[0]) {
+            case rock:
+                if (randomNo[0] === paper){
+                    console.log('You lose!');
+                } else if (randomNo[0] === scissors){
+                    console.log('You win!')
+                }
+                break;
+            case paper:
+                if (randomNo[0] === scissors){
+                    console.log('You lose!');
+                } else if (randomNo[0] === rock){
+                    console.log('You win!')
+                }
+                break;
+            case scissors:
+                if (randomNo[0] === rock){
+                    console.log('You lose!');
+                } else if (randomNo[0] === paper){
+                    console.log('You win!')
+                }
+                break;
+        }
+    } else {
+        throw new Error('Write a number please dude.');
+    }
+}
+
+try {
+    rockPaperScissors(1);
+} catch(e) {
+    console.log(`${e.name}: ${e.message}`)
+}
