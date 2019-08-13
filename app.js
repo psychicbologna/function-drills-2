@@ -112,34 +112,36 @@ console.log(daysInAMonth('February', false));
 
 function rockPaperScissors(number) {
     const randomNo = Math.floor(Math.random() * 3) + 1;
-    const rock = [1, 'rock'];
-    const paper = [2, 'paper'];
-    const scissors = [3, 'scissors'];
+    const rock = 1;
+    const paper = 2;
+    const scissors = 3;
 
-    console.log(`You are ${number[1]}, your opponent is ${randomNo[1]}.`)
+    const name = ['rock', 'paper', 'scissors'];
 
-    if (randomNo[0] === number[0]) {
+    console.log(`You are ${name[number - 1]}, your opponent is ${name[randomNo - 1]}.`)
+
+    if (randomNo === number) {
         console.log(`It's a tie!`);
-    } else if (randomNo[0] != number[0]) {
-        switch (number[0]) {
+    } else if (randomNo != number) {
+        switch (number) {
             case rock:
-                if (randomNo[0] === paper){
+                if (randomNo === paper){
                     console.log('You lose!');
-                } else if (randomNo[0] === scissors){
+                } else if (randomNo === scissors){
                     console.log('You win!')
                 }
                 break;
             case paper:
-                if (randomNo[0] === scissors){
+                if (randomNo === scissors){
                     console.log('You lose!');
-                } else if (randomNo[0] === rock){
+                } else if (randomNo === rock){
                     console.log('You win!')
                 }
                 break;
             case scissors:
-                if (randomNo[0] === rock){
+                if (randomNo === rock){
                     console.log('You lose!');
-                } else if (randomNo[0] === paper){
+                } else if (randomNo === paper){
                     console.log('You win!')
                 }
                 break;
@@ -150,7 +152,7 @@ function rockPaperScissors(number) {
 }
 
 try {
-    rockPaperScissors(1);
+    rockPaperScissors(3);
 } catch(e) {
     console.log(`${e.name}: ${e.message}`)
 }
